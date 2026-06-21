@@ -6,7 +6,7 @@ import os
 
 if __name__ == "__main__":
     host = "0.0.0.0"
-    port = 8000
+    port = 10101
     dire = os.path.dirname(os.path.abspath(__file__))
     reply = GenerateReply(replyFile = f"{dire}/data/replyword.json", emotionFile = f"{dire}/data/emotion.csv")
     handler = LINEWebhook(tokenFile = f"{dire}/line.token", callback = reply.generate_message)

@@ -1,5 +1,6 @@
 import json, random, csv
-from .weather import JapanWeather
+from apps.weather import JapanWeather
+
 class GenerateReply:
     def __init__(self, replyFile = "replyword.json", emotionFile = "emotion.csv"):
         with open(replyFile, "r", encoding="UTF-8") as rf:
