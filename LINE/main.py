@@ -5,7 +5,7 @@ from http.server import ThreadingHTTPServer
 import os
 
 if __name__ == "__main__":
-    host = "0.0.0.0"
+    host = "192.168.10.50"
     port = 10101
     dire = os.path.dirname(os.path.abspath(__file__))
     reply = GenerateReply(replyFile = f"{dire}/data/replyword.json", emotionFile = f"{dire}/data/emotion.csv")
