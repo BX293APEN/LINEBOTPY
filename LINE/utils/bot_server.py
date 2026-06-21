@@ -5,10 +5,9 @@ from http.server import BaseHTTPRequestHandler
 
 class LINEWebhook:
     LINE_API_URL = "https://api.line.me/v2/bot/message/reply"
-    def __init__(self, tokenFile, callback):
+    def __init__(self, token, callback):
         self.generate_message = callback
-        with open(tokenFile, "r", encoding = "UTF-8") as token:
-            self.LINE_CHANNEL_TOKEN = token.read()
+        self.LINE_CHANNEL_TOKEN = token
     
     def reply_to_line(self, reply_token, text):
         payload = json.dumps(
