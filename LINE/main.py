@@ -10,7 +10,7 @@ if __name__ == "__main__":
     dire = os.path.dirname(os.path.abspath(__file__))
     reply = GenerateReply(replyFile = f"{dire}/data/replyword.json", emotionFile = f"{dire}/data/emotion.csv")
     handler = LINEWebhook(tokenFile = f"{dire}/line.token", callback = reply.generate_message)
-    server = ThreadingHTTPServer((host, port), handler)
+    server = ThreadingHTTPServer((host, port), handler.handler())
     print(f"Listening on http://{host}:{port}")
     try:
         server.serve_forever()
